@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr60wgcwmt2lv"]
+
+[ext_resource type="PackedScene" uid="uid://buv5ond3o36sj" path="res://scenes/background.tscn" id="1_rld3t"]
+[ext_resource type="PackedScene" uid="uid://cpyb54rayyo1w" path="res://scenes/Ground.tscn" id="2_p5o1e"]
+[ext_resource type="PackedScene" uid="uid://hi1wruibsa0l" path="res://scenes/knight.tscn" id="3_jvtaa"]
+[ext_resource type="Script" path="res://scripts/knight.gd" id="4_mgx71"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_rld3t")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_p5o1e")]
+position = Vector2(0, 376)
+
+[node name="Knight" parent="." instance=ExtResource("3_jvtaa")]
+position = Vector2(176, 373)
+script = ExtResource("4_mgx71")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
