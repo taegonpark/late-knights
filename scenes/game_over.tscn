@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckep4rb2x7u6m"]
+
+[ext_resource type="FontFile" uid="uid://di1sy01nfpb74" path="res://assets/fonts/DungeonFont.ttf" id="1_c214w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odhw8"]
+bg_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8s8jc"]
+bg_color = Color(0, 0.579298, 0.580603, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0y71"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -34.5
+offset_right = 91.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_c214w")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_odhw8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8s8jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a0y71")
+text = "Restart"

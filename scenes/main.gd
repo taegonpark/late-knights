@@ -24,6 +24,7 @@ var last_obs
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+	$GameOver.get_node("Button").pressed.connect(new_game)
 	new_game()
 
 func new_game():
@@ -31,6 +32,12 @@ func new_game():
 	game_running = false
 	score = 0
 	show_score()
+	get_tree().paused = false
+	
+	#delete all previous obstacles
+	for obs in obstacles:
+		obs.queue_free()
+	obstacles.clear()
 	
 	#reset nodes
 	$Knight.position = KNIGHT_START_POS
@@ -40,7 +47,8 @@ func new_game():
 	
 	#reset HUD
 	$HUD.get_node("StartLabel").show()
-
+	$GameOver.hide()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if game_running:
@@ -86,6 +94,8 @@ func generate_obs():
 			
 func add_obs(obs, x, y):
 	obs.position = Vector2i(x, y)
+	#connect to obs signal
+	obs.body_entered.connect(hit_obs)
 	add_child(obs)
 	obstacles.append(obs)
 
@@ -93,5 +103,15 @@ func remove_obs(obs):
 	obs.queue_free()
 	obstacles.erase(obs)
 
+func hit_obs(body):
+	if body.name == "Knight":
+		#print("Collision")
+		game_over()
+
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "Score: " + str(score/40)
+
+func game_over():
+	get_tree().paused = true
+	game_running = false
+	$GameOver.show()
