@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl80dilqmdkti"]
+
+[ext_resource type="Texture2D" uid="uid://ca15x0tvkrw0" path="res://assets/images/tree.png" id="1_ejfaj"]
+
+[node name="Stump" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(96, 112)
+scale = Vector2(4, 4)
+texture = ExtResource("1_ejfaj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, 112)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(12, -14, 8, -12, -2, -2, -8, -4, -10, -6, -14, 6, -20, 14, 20, 14, 14, 2, 14, -4)

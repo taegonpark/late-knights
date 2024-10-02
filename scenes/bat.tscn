@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://cbbesk6kem5l0"]
+
+[ext_resource type="Texture2D" uid="uid://qeuj2803lrk" path="res://assets/images/fly.png" id="1_ikldq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qwy"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cer2a"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fm32"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wn2u"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojey6"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ejhx"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xopmv"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr606"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nytbu"]
+atlas = ExtResource("1_ikldq")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njqnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cer2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fm32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wn2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojey6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ejhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr606")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nytbu")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nbpsf"]
+
+[node name="Bat" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_njqnm")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.315476
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_nbpsf")
