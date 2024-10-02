@@ -5,9 +5,10 @@
 [node name="Box" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(3.7, 3.7)
 texture = ExtResource("1_bmbvc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(4, 4)
-polygon = PackedVector2Array(17, 13.5, 14, 0, 12, -12, 12, -12, 6, -10, 0, -6, -6, -10, -16, -12, -14, 14)
+position = Vector2(-8, -2.38419e-07)
+scale = Vector2(3.50991, 3.50421)
+polygon = PackedVector2Array(16.4743, 13.2153, 14, 0, 11.2615, -9.64145, 11.2615, -9.64145, 6, -10, 0.835796, -9.64145, -6, -10, -14.8027, -9.64145, -14, 14)

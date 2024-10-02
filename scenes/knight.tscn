@@ -283,10 +283,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3yhp"]
-size = Vector2(96, 162.75)
+size = Vector2(78, 178.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt443"]
-size = Vector2(94, 100)
+size = Vector2(78, 100)
 
 [node name="Knight" type="CharacterBody2D"]
 z_index = 1
@@ -299,11 +299,11 @@ autoplay = "idle"
 frame_progress = 0.611508
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
-position = Vector2(-19, 117.375)
+position = Vector2(-27, 109.375)
 shape = SubResource("RectangleShape2D_o3yhp")
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
-position = Vector2(-19, 147)
+position = Vector2(-27, 147)
 shape = SubResource("RectangleShape2D_jt443")
 
 [node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]

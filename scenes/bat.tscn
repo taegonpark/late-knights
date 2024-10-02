@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbbesk6kem5l0"]
+[gd_scene load_steps=14 format=3 uid="uid://cbbesk6kem5l0"]
 
+[ext_resource type="Script" path="res://scenes/bat.gd" id="1_fk274"]
 [ext_resource type="Texture2D" uid="uid://qeuj2803lrk" path="res://assets/images/fly.png" id="1_ikldq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qwy"]
@@ -76,6 +77,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nbpsf"]
 
 [node name="Bat" type="Area2D"]
+script = ExtResource("1_fk274")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)

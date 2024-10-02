@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY = 4000.0
+const GRAVITY = 3800.0
 const JUMP_SPEED = -1400.0
 
 func _physics_process(delta):
