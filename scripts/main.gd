@@ -52,16 +52,21 @@ func new_game():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if game_running:
+		speed = START_SPEED + score / 4000
+		#print(speed)
+		if (speed > MAX_SPEED):
+			speed = MAX_SPEED
+		
 		#generate obstacles
 		generate_obs()
 		
 		#update score
-		score += START_SPEED
+		score += speed
 		show_score()
 
 		#update knight, camera, and ground position
-		$Knight.position.x += START_SPEED
-		$Camera2D.position.x += START_SPEED
+		$Knight.position.x += speed
+		$Camera2D.position.x += speed
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x
 		
