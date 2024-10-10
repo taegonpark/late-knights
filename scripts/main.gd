@@ -50,7 +50,7 @@ func new_game():
 	$GameOver.hide()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if game_running:
 		speed = START_SPEED + score / 4000
 		#print(speed)
